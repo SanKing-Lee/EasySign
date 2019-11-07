@@ -124,6 +124,32 @@
                 android:textAlignment="center"
                 android:textSize="30sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_group_work_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/view_group_sign_time"
+            app:layout_constraintTop_toBottomOf="@id/view_group_sign_out_time">
+
+            <TextView
+                android:id="@+id/text_work_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/work_time_label"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/text_work_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

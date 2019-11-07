@@ -33,6 +33,11 @@ public class HomeFragment extends Fragment {
     private final int MSG_TIMER = 1;
     private final int MSG_RST = 2;
 
+    // sign flag
+    private final int SIGN_IN_FLAG = 1;
+    private final int SIGN_OUT_FLAG = 2;
+    private final int WORK_FLAG = 3;
+
     // view
     private HomeViewModel homeViewModel;
     private View root;
@@ -52,11 +57,20 @@ public class HomeFragment extends Fragment {
     private Button mBtnSignIn;
     private TextView mTextSignInTime;
     private boolean bSignedIn = false;
+    private int signInHour;
+    private int signInMinute;
 
     // sign out
     private Button mBtnSignOut;
     private TextView mTextSignOutTime;
     private boolean bSignedOut = false;
+    private int signOutHour;
+    private int signOutMinute;
+
+    // work time
+    private TextView mTextWorkTime;
+    private int workHour;
+    private int workMinute;
 
     // reset
     private Button mBtnRst;
@@ -70,16 +84,42 @@ public class HomeFragment extends Fragment {
         return timeBuilder.toString();
     }
 
-    private void displaySignTime() {
-        // 实时显示当前的时间
-        mTextCurrDate = root.findViewById(R.id.text_current_date);
-        mTextCurrTime = root.findViewById(R.id.text_current_time);
+    private void changeTime(int hour, int minute, int signFlag) {
+        switch (signFlag) {
+            case SIGN_IN_FLAG:
+                signInHour = hour;
+                signInMinute = minute;
+                mTextSignInTime.setText(buildTime(hour, minute));
+                break;
+            case SIGN_OUT_FLAG:
+                signOutHour = hour;
+                signOutMinute = minute;
+                mTextSignOutTime.setText(buildTime(hour, minute));
+                break;
+            case WORK_FLAG:
+                workHour = hour;
+                workMinute = minute;
+                mTextWorkTime.setText(buildTime(hour, minute));
+            default:
+                break;
+        }
 
+    }
+
+    private void calWorkTime() {
+        int totalWorkMinutes = signOutHour * 60 - signInHour * 60 + signOutMinute - signInMinute;
+        workMinute = totalWorkMinutes % 60;
+        workHour = totalWorkMinutes / 60;
+        changeTime(workHour, workMinute, WORK_FLAG);
+    }
+
+    private void onClickSignTime() {
         // 在已签到的情况下可以修改签到时间
-        mTextSignInTime = root.findViewById(R.id.text_sign_in_time);
         TimePickerDialog.OnTimeSetListener signInTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                signInHour = hourOfDay;
+                signInMinute = minute;
                 String time = buildTime(hourOfDay, minute);
                 mTextSignInTime.setText(time);
             }
@@ -100,11 +140,12 @@ public class HomeFragment extends Fragment {
         });
 
         // 在已签退的情况下可以修改签退时间
-        mTextSignOutTime = root.findViewById(R.id.text_sign_out_time);
         TimePickerDialog.OnTimeSetListener signOutTimeSetListener =
                 new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        signOutHour = hourOfDay;
+                        signOutMinute = minute;
                         String time = buildTime(hourOfDay, minute);
                         mTextSignOutTime.setText(time);
                     }
@@ -147,16 +188,19 @@ public class HomeFragment extends Fragment {
                         mStrCurrTime = timeFormat.format(System.currentTimeMillis());
                         mTextCurrTime.setText(mStrCurrTime);
 
-                        String calendarTime =
-                                buildTime(Calendar.getInstance().get(Calendar.HOUR_OF_DAY),
-                                        Calendar.getInstance().get(Calendar.MINUTE));
+                        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+                        int minute = Calendar.getInstance().get(Calendar.MINUTE);
+
+                        String calendarTime = buildTime(hour, minute);
+
                         // 更新时间
                         if (!bSignedIn) {
-                            mTextSignInTime.setText(calendarTime);
+                            changeTime(hour, minute, SIGN_IN_FLAG);
                         }
                         if (!bSignedOut) {
-                            mTextSignOutTime.setText(calendarTime);
+                            changeTime(hour, minute, SIGN_OUT_FLAG);
                         }
+                        calWorkTime();
                         break;
                     //重置签到、签退按钮
                     case MSG_RST:
@@ -197,7 +241,7 @@ public class HomeFragment extends Fragment {
 
     private void initButton() {
         // 上班签到
-        mBtnSignIn = root.findViewById(R.id.btn_sign_in);
+
         mBtnSignIn.setText("签到");
         mBtnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,7 +253,7 @@ public class HomeFragment extends Fragment {
         });
 
         // 下班签退
-        mBtnSignOut = root.findViewById(R.id.btn_sign_out);
+
         mBtnSignOut.setText("签退");
         mBtnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,7 +265,7 @@ public class HomeFragment extends Fragment {
         });
 
         // 重置
-        mBtnRst = root.findViewById(R.id.btn_sign_reset);
+
         mBtnRst.setText("重置");
         mBtnRst.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -233,8 +277,7 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    private void init(LayoutInflater inflater, ViewGroup container) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -245,14 +288,36 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        // 获取对应的组件
+        mTextCurrDate = root.findViewById(R.id.text_current_date);
+        mTextCurrTime = root.findViewById(R.id.text_current_time);
+        mTextSignInTime = root.findViewById(R.id.text_sign_in_time);
+        mTextSignOutTime = root.findViewById(R.id.text_sign_out_time);
+        mTextWorkTime = root.findViewById(R.id.text_work_time);
 
+        mBtnSignIn = root.findViewById(R.id.btn_sign_in);
+        mBtnSignOut = root.findViewById(R.id.btn_sign_out);
+        mBtnRst = root.findViewById(R.id.btn_sign_reset);
+
+        // 向button上添加点击事件
+        initButton();
+
+        // 向签到、签退时间显示上添加点击事件
+        onClickSignTime();
+
+        // 创建消息处理器
         createHandler();
 
+        // 创建计时器
         createTimer();
 
-        displaySignTime();
 
-        initButton();
+    }
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+
+        init(inflater, container);
 
         return root;
     }
