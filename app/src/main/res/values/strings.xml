@@ -14,5 +14,10 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
+<!--    home    -->
+    <string name="sign_in_label">签到时间：</string>
+    <string name="sign_out_label">签退时间：</string>
+    <string name="hour_minute_split">:</string>
+
 
 </resources>
