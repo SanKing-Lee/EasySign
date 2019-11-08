@@ -3,16 +3,17 @@ package com.starplum.easysign.ui.home;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
-import android.graphics.Color;
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -24,8 +25,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.starplum.easysign.R;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOError;
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Properties;
 
 public class HomeFragment extends Fragment {
 
@@ -37,6 +45,10 @@ public class HomeFragment extends Fragment {
     private final int SIGN_IN_FLAG = 1;
     private final int SIGN_OUT_FLAG = 2;
     private final int WORK_FLAG = 3;
+
+    // property file
+    private final String propSignTimeFileName = "sign_time.properties";
+    private final Properties propSignTime = new Properties();
 
     // view
     private HomeViewModel homeViewModel;
@@ -75,6 +87,14 @@ public class HomeFragment extends Fragment {
     // reset
     private Button mBtnRst;
 
+    private int getHour() {
+        return Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+    }
+
+    private int getMinute() {
+        return Calendar.getInstance().get(Calendar.MINUTE);
+    }
+
     private String buildTime(int hour, int minute) {
         StringBuilder timeBuilder = new StringBuilder();
         timeBuilder.append(hour);
@@ -100,28 +120,46 @@ public class HomeFragment extends Fragment {
                 workHour = hour;
                 workMinute = minute;
                 mTextWorkTime.setText(buildTime(hour, minute));
+                break;
             default:
                 break;
         }
+        saveSignTime(signFlag);
+    }
 
+    private void updateTime(int signFlag) {
+        switch (signFlag) {
+            case SIGN_IN_FLAG:
+                changeTime(signInHour, signInMinute, signFlag);
+                break;
+            case SIGN_OUT_FLAG:
+                changeTime(signOutHour, signOutMinute, signFlag);
+                break;
+            case WORK_FLAG:
+                changeTime(workHour, workMinute, signFlag);
+                break;
+            default:
+                break;
+        }
     }
 
     private void calWorkTime() {
         int totalWorkMinutes = signOutHour * 60 - signInHour * 60 + signOutMinute - signInMinute;
+        if (totalWorkMinutes < 0) {
+            workMinute = workHour = 0;
+            return;
+        }
         workMinute = totalWorkMinutes % 60;
         workHour = totalWorkMinutes / 60;
         changeTime(workHour, workMinute, WORK_FLAG);
     }
 
-    private void onClickSignTime() {
+    private void addOnClickSignTime() {
         // 在已签到的情况下可以修改签到时间
         TimePickerDialog.OnTimeSetListener signInTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                signInHour = hourOfDay;
-                signInMinute = minute;
-                String time = buildTime(hourOfDay, minute);
-                mTextSignInTime.setText(time);
+                changeTime(hourOfDay, minute, SIGN_IN_FLAG);
             }
         };
         final TimePickerDialog signInTimePickerDialog =
@@ -144,10 +182,7 @@ public class HomeFragment extends Fragment {
                 new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        signOutHour = hourOfDay;
-                        signOutMinute = minute;
-                        String time = buildTime(hourOfDay, minute);
-                        mTextSignOutTime.setText(time);
+                        changeTime(hourOfDay, minute, SIGN_OUT_FLAG);
                     }
                 };
         final TimePickerDialog signOutTimePickerDialog =
@@ -241,26 +276,29 @@ public class HomeFragment extends Fragment {
 
     private void initButton() {
         // 上班签到
-
-        mBtnSignIn.setText("签到");
+        mBtnSignIn.setText((bSignedIn)?"已签到":"签到");
         mBtnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(bSignedIn) return;
                 mBtnSignIn.setText("已签到");
                 mBtnSignIn.setActivated(false);
                 bSignedIn = true;
+                saveSignTime(SIGN_IN_FLAG);
             }
         });
 
         // 下班签退
 
-        mBtnSignOut.setText("签退");
+        mBtnSignOut.setText((bSignedOut)?"已签退":"签退");
         mBtnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(bSignedOut) return;
                 mBtnSignOut.setText("已签退");
                 mBtnSignOut.setActivated(false);
                 bSignedOut = true;
+                saveSignTime(SIGN_OUT_FLAG);
             }
         });
 
@@ -275,6 +313,41 @@ public class HomeFragment extends Fragment {
                 mHandler.sendMessage(msg);
             }
         });
+    }
+
+    private void loadSignTime() {
+        SharedPreferences sharedSignTime = root.getContext().getSharedPreferences("data", 0);
+        bSignedIn = sharedSignTime.getBoolean("is_signed_in", false);
+        if (bSignedIn) {
+            signInHour = sharedSignTime.getInt("sign_in_hour", getHour());
+            signInMinute = sharedSignTime.getInt("sign_in_minute", getMinute());
+            updateTime(SIGN_IN_FLAG);
+        }
+        bSignedOut = sharedSignTime.getBoolean("is_signed_out", false);
+        if (bSignedOut) {
+            signOutHour = sharedSignTime.getInt("sign_out_hour", getHour());
+            signOutMinute = sharedSignTime.getInt("sign_out_minute", getMinute());
+            updateTime(SIGN_OUT_FLAG);
+        }
+    }
+
+    private void saveSignTime(int signFlag) {
+        SharedPreferences.Editor sharedEditSignTime = root.getContext().getSharedPreferences("data", 0).edit();
+        switch (signFlag) {
+            case SIGN_IN_FLAG:
+                sharedEditSignTime.putBoolean("is_signed_in", bSignedIn);
+                sharedEditSignTime.putInt("sign_in_hour", signInHour);
+                sharedEditSignTime.putInt("sign_in_minute", signInMinute);
+                break;
+            case SIGN_OUT_FLAG:
+                sharedEditSignTime.putBoolean("is_signed_out", bSignedOut);
+                sharedEditSignTime.putInt("sign_out_hour", signOutHour);
+                sharedEditSignTime.putInt("sign_out_minute", signOutMinute);
+                break;
+            default:
+                break;
+        }
+        sharedEditSignTime.commit();
     }
 
     private void init(LayoutInflater inflater, ViewGroup container) {
@@ -295,15 +368,23 @@ public class HomeFragment extends Fragment {
         mTextSignOutTime = root.findViewById(R.id.text_sign_out_time);
         mTextWorkTime = root.findViewById(R.id.text_work_time);
 
+        // 设置各个组件的字体
+//        Typeface tfSong = Typeface.createFromAsset(root.getContext().getAssets(), "fonts/song.otf");
+//        mTextWorkTime.setTypeface(tfSong);
+//        mTextSignOutTime.setTypeface(tfSong);
+//        mTextSignInTime.setTypeface(tfSong);
+
         mBtnSignIn = root.findViewById(R.id.btn_sign_in);
         mBtnSignOut = root.findViewById(R.id.btn_sign_out);
         mBtnRst = root.findViewById(R.id.btn_sign_reset);
+
+        loadSignTime();
 
         // 向button上添加点击事件
         initButton();
 
         // 向签到、签退时间显示上添加点击事件
-        onClickSignTime();
+        addOnClickSignTime();
 
         // 创建消息处理器
         createHandler();
@@ -321,6 +402,4 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
-
-
 }
