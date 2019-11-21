@@ -25,12 +25,6 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.starplum.easysign.R;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOError;
-import java.io.IOException;
-import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Properties;
@@ -97,6 +91,7 @@ public class HomeFragment extends Fragment {
 
     private String buildTime(int hour, int minute) {
         StringBuilder timeBuilder = new StringBuilder();
+        if(hour < 10) timeBuilder.append("0");
         timeBuilder.append(hour);
         timeBuilder.append(":");
         if (minute < 10) timeBuilder.append("0");
@@ -226,25 +221,24 @@ public class HomeFragment extends Fragment {
                         int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
                         int minute = Calendar.getInstance().get(Calendar.MINUTE);
 
-                        String calendarTime = buildTime(hour, minute);
-
                         // 更新时间
                         if (!bSignedIn) {
+                            mBtnSignIn.setEnabled(true);
+                            mBtnSignIn.setText(R.string.sign_in_btn);
                             changeTime(hour, minute, SIGN_IN_FLAG);
+                        } else {
+                            mBtnSignIn.setEnabled(false);
+                            mBtnSignIn.setText(R.string.signed_in_btn);
                         }
                         if (!bSignedOut) {
+                            mBtnSignOut.setEnabled(true);
+                            mBtnSignOut.setText(R.string.sign_out_btn);
                             changeTime(hour, minute, SIGN_OUT_FLAG);
+                        } else {
+                            mBtnSignOut.setEnabled(false);
+                            mBtnSignOut.setText(R.string.signed_out_btn);
                         }
                         calWorkTime();
-                        break;
-                    //重置签到、签退按钮
-                    case MSG_RST:
-                        mBtnSignIn.setText("签到");
-                        mBtnSignIn.setActivated(true);
-                        bSignedIn = false;
-                        mBtnSignOut.setText("签退");
-                        mBtnSignOut.setActivated(true);
-                        bSignedOut = false;
                         break;
                     default:
                         break;
@@ -276,41 +270,32 @@ public class HomeFragment extends Fragment {
 
     private void initButton() {
         // 上班签到
-        mBtnSignIn.setText((bSignedIn)?"已签到":"签到");
+        mBtnSignIn.setText((bSignedIn)?R.string.signed_in_btn:R.string.sign_in_btn);
         mBtnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(bSignedIn) return;
-                mBtnSignIn.setText("已签到");
-                mBtnSignIn.setActivated(false);
                 bSignedIn = true;
                 saveSignTime(SIGN_IN_FLAG);
             }
         });
 
         // 下班签退
-
-        mBtnSignOut.setText((bSignedOut)?"已签退":"签退");
+        mBtnSignOut.setText((bSignedOut)?R.string.signed_out_btn:R.string.sign_out_btn);
         mBtnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(bSignedOut) return;
-                mBtnSignOut.setText("已签退");
-                mBtnSignOut.setActivated(false);
                 bSignedOut = true;
                 saveSignTime(SIGN_OUT_FLAG);
             }
         });
 
         // 重置
-
         mBtnRst.setText("重置");
         mBtnRst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Message msg = new Message();
-                msg.what = MSG_RST;
-                mHandler.sendMessage(msg);
+                bSignedIn = false;
+                bSignedOut = false;
             }
         });
     }
@@ -347,7 +332,7 @@ public class HomeFragment extends Fragment {
             default:
                 break;
         }
-        sharedEditSignTime.commit();
+        sharedEditSignTime.apply();
     }
 
     private void init(LayoutInflater inflater, ViewGroup container) {
