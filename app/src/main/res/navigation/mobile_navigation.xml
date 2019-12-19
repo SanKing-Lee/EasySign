@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.starplum.easysign.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.starplum.easysign.ui.record.RecordFragment"
+        android:label="@string/menu_record"
+        tools:layout="@layout/fragment_record" />
 
     <fragment
         android:id="@+id/nav_slideshow"

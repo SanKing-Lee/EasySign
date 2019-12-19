@@ -10,10 +10,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86d9c6e4-a060-4191-95a3-30dabfa69da9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/dao/ConfigDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/dao/SignInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/database/ESDBHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/database/ESDBSchema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/model/SignInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/gallery/GalleryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/record/RecordFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/gallery/GalleryViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/record/RecordViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/home/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/util/DataBaseHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_gallery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_record.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +46,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="127.0.0.1:7556" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="emulator-5554" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -35,93 +57,133 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="1416">
-              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_send.xml">
-          <provider editor-type-id="text-editor" />
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_share.xml">
-          <provider editor-type-id="text-editor" />
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/gallery/GalleryFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-              <folding>
-                <element signature="e#966#1129#0" expanded="true" />
-                <element signature="e#1128#1129#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+            <state relative-caret-position="253">
+              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" />
                 <element signature="method#onSupportNavigateUp#0;class#MainActivity#0" />
-                <element signature="method#onKeyDown#0;class#MainActivity#0" />
+                <element signature="e#3410#3699#0" expanded="true" />
+                <element signature="e#3698#3699#0" expanded="true" />
+                <element signature="e#3742#3930#0" expanded="true" />
+                <element signature="e#3929#3930#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="-51" />
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
-          <provider editor-type-id="text-editor" />
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_gallery.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
           <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+              <folding>
+                <element signature="e#528#550#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/database/ESDBHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="463">
+              <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#371#372#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/database/ESDBSchema.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/home/HomeFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="148" column="49" lean-forward="true" selection-start-line="148" selection-start-column="49" selection-end-line="148" selection-end-column="49" />
+              <folding>
+                <element signature="method#onCreateView#0;class#HomeFragment#0" />
+                <element signature="method#updateCurrentTime#0;class#HomeFragment#0" />
+                <element signature="method#changeTime#0;class#HomeFragment#0" />
+                <element signature="method#addOnClickSignTime#0;class#HomeFragment#0" />
+                <element signature="method#createHandler#0;class#HomeFragment#0" />
+                <element signature="method#createTimer#0;class#HomeFragment#0" />
+                <element signature="method#initButton#0;class#HomeFragment#0" />
+                <element signature="method#onPause#0;class#HomeFragment#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_record.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/dao/SignInfoDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="class#SICursorWrapper#0;class#SignInfoDao#0" />
+                <element signature="e#532#533#0" expanded="true" />
+                <element signature="e#569#570#0" expanded="true" />
+                <element signature="method#SignInfoDao#0;class#SignInfoDao#0" />
+                <element signature="method#getContentValues#0;class#SignInfoDao#0" />
+                <element signature="method#querySignInfo#0;class#SignInfoDao#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/model/SignInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-172">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+              <folding>
+                <element signature="e#577#578#0" expanded="true" />
+                <element signature="e#615#616#0" expanded="true" />
+                <element signature="method#calWorkMs#0;class#SignInfo#0" />
+                <element signature="e#3775#3776#0" expanded="true" />
+                <element signature="e#3801#3802#0" expanded="true" />
+                <element signature="e#3835#3836#0" expanded="true" />
+                <element signature="e#3859#3860#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -143,6 +205,7 @@
       <find>propFileName</find>
       <find>signed_in</find>
       <find>propSignTime</find>
+      <find>private</find>
     </findStrings>
     <replaceStrings>
       <replace>signOutTime</replace>
@@ -155,6 +218,7 @@
       <replace>signed_out</replace>
       <replace>sharedSignTime</replace>
       <replace>sharedEditSignTime</replace>
+      <replace>public</replace>
     </replaceStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -171,18 +235,30 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/home/HomeViewModel.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/util/DataBase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/util/DataBaseHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/ESApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ESApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/util/ESDBSchema.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/util/ESDBHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/model.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/dao/ConfigDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/record/RecordViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/home/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/database/ESDBSchema.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/database/ESDBHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/model/SignInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/dao/SignInfoDao.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1920" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
@@ -196,6 +272,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="EasySign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasySign" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasySign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasySign" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasySign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasySign" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -219,7 +318,21 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="easysign" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasySign" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="easysign" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasySign" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="easysign" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EasySign" type="1abcf292:AndroidViewProjectNode" />
@@ -227,7 +340,6 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="easysign" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="gallery" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EasySign" type="1abcf292:AndroidViewProjectNode" />
@@ -236,6 +348,14 @@
               <item name="easysign" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasySign" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="easysign" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="record" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EasySign" type="1abcf292:AndroidViewProjectNode" />
@@ -255,28 +375,9 @@
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="EasySign" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasySign" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="EasySign" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasySign" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="EasySign" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasySign" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="EasySign" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
@@ -286,8 +387,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="872QEDU822DK2" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-11-21T03:23:47.334Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="emulator-5554" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-12-19T04:58:12.189Z" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="ExportApk.SignV1" value="true" />
@@ -296,10 +397,13 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Develop-Tools/android-sdk-macosx" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets/fonts" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.do.not.copy.http.proxy.settings.to.gradle" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.starplum.easysign" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/assets/fonts" />
       <recent name="$PROJECT_DIR$/app/src/main/res/font" />
@@ -418,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574332903372</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="bug fix">
+      <created>1575267500138</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575267500138</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -431,8 +542,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="1920" y="23" width="1920" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
+      <window_info id="DB Browser" weight="0.1826411" />
       <window_info id="Captures" order="0" sideWeight="0.5007728" side_tool="true" weight="0.13045794" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992272" visible="true" weight="0.13045794" />
       <window_info id="Structure" order="2" side_tool="true" />
@@ -440,24 +553,26 @@
       <window_info id="Build Variants" order="4" side_tool="true" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="6" />
-      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Resources Explorer" order="7" weight="0.32960597" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Run" order="0" weight="0.32953367" />
-      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32953367" />
-      <window_info anchor="bottom" id="TODO" order="2" weight="0.32953367" />
+      <window_info anchor="bottom" id="DB Execution Console" order="0" />
+      <window_info anchor="bottom" id="Run" order="1" weight="0.32953367" />
+      <window_info anchor="bottom" id="Logcat" order="2" visible="true" weight="0.32953367" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32953367" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32953367" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50106496" side_tool="true" weight="0.32953367" />
-      <window_info anchor="bottom" id="Version Control" order="6" weight="0.32953367" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49893504" visible="true" weight="0.32953367" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" weight="0.32953367" />
-      <window_info anchor="bottom" id="Find" order="9" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32953367" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32953367" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49893504" weight="0.30673575" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.32953367" />
+      <window_info anchor="bottom" id="Find" order="10" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.32960597" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Preview" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Assistant" order="6" weight="0.32960597" />
     </layout>
     <layout-to-restore>
       <window_info id="Captures" order="0" sideWeight="0.5007728" side_tool="true" weight="0.13045794" />
@@ -495,31 +610,12 @@
     <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_tools.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.1.0/b9ebb04df2cb0cad4419af3c658690bc82aa5706/fragment-1.1.0-sources.jar!/androidx/fragment/app/Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2192">
           <caret line="2612" selection-start-line="2612" selection-end-line="2612" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#370#389#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
@@ -558,60 +654,198 @@
       <provider selected="true" editor-type-id="fontseditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/properties/sign_time.properties" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/util/DataBaseHelper.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_send.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_share.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="240">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://b85bbc29-ea0a-4d82-8bf3-989ebc848ee4/objects/schemas/main/tables/ad_analytics_table">
+      <provider selected="true" editor-type-id="1.DATA">
+        <state row-count="0" readonly="false">
+          <columns>
+            <column name="_id" position="0" visible="true" />
+            <column name="report_data" position="1" visible="true" />
+            <column name="create_time" position="2" visible="true" />
+            <column name="report_type" position="3" visible="true" />
+          </columns>
+          <sorting />
+          <content-types />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://b85bbc29-ea0a-4d82-8bf3-989ebc848ee4/objects/schemas//tables/weather">
+      <provider selected="true" editor-type-id="1.DATA">
+        <state row-count="0" readonly="false">
+          <columns>
+            <column name="_id" position="0" visible="true" />
+            <column name="CITY" position="1" visible="true" />
+            <column name="CITY_EN" position="2" visible="true" />
+            <column name="PUBLISH" position="3" visible="true" />
+            <column name="LUNAR" position="4" visible="true" />
+            <column name="CITYID" position="5" visible="true" />
+            <column name="TEMP" position="6" visible="true" />
+            <column name="WEATHER" position="7" visible="true" />
+            <column name="IMG" position="8" visible="true" />
+            <column name="WIND" position="9" visible="true" />
+            <column name="FL" position="10" visible="true" />
+            <column name="IN_DAY" position="11" visible="true" />
+            <column name="REQDATE" position="12" visible="true" />
+            <column name="REAL_TEMP" position="13" visible="true" />
+            <column name="REQDATE1" position="14" visible="true" />
+          </columns>
+          <sorting>
+            <column name="_id" index="1" direction="DESCENDING" />
+          </sorting>
+          <content-types />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://b85bbc29-ea0a-4d82-8bf3-989ebc848ee4/objects/schemas//tables/todoinfo">
+      <provider selected="true" editor-type-id="1.DATA">
+        <state row-count="0" readonly="false">
+          <columns>
+            <column name="_id" position="0" visible="true" />
+            <column name="UUID" position="1" visible="true" />
+            <column name="IS_IMPORTANT" position="2" visible="true" />
+            <column name="IS_ALARM" position="3" visible="true" />
+            <column name="IS_ALL_DAY" position="4" visible="true" />
+            <column name="IS_LUNAR" position="5" visible="true" />
+            <column name="IS_SYNC" position="6" visible="true" />
+            <column name="IS_FINISH" position="7" visible="true" />
+            <column name="ALARM_TIME" position="8" visible="true" />
+            <column name="CONTENT" position="9" visible="true" />
+            <column name="STATE" position="10" visible="true" />
+            <column name="FINISH_TIME" position="11" visible="true" />
+            <column name="USER_ID" position="12" visible="true" />
+            <column name="CLIENT" position="13" visible="true" />
+            <column name="CREATE_TIME" position="14" visible="true" />
+            <column name="UPDATE_TIME" position="15" visible="true" />
+          </columns>
+          <sorting />
+          <content-types />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://b85bbc29-ea0a-4d82-8bf3-989ebc848ee4/consoles/WLNDataBase">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ESApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+    <entry file="db://1d739824-021b-46cc-854a-26b2b977c260/consoles/EasySign">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="db://1d739824-021b-46cc-854a-26b2b977c260/objects/schemas/main/tables/signs">
+      <provider selected="true" editor-type-id="1.DATA">
+        <state row-count="0" readonly="false">
+          <columns>
+            <column name="_id" position="0" visible="true" />
+            <column name="uuidis_signed_in" position="1" visible="true" />
+            <column name="is_signed_out" position="2" visible="true" />
+            <column name="time_signed_in" position="3" visible="true" />
+            <column name="time_signed_out" position="4" visible="true" />
+            <column name="is_work_time_fulfill" position="5" visible="true" />
+          </columns>
+          <sorting>
+            <column name="_id" index="1" direction="ASCENDING" />
+          </sorting>
+          <content-types />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/util/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.2.0-beta02/55ca9ae8acf61a86fc591ce324f71d755adebcc5/fragment-1.2.0-beta02-sources.jar!/androidx/fragment/app/FragmentManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$USER_HOME$/Develop-Tools/android-sdk-macosx/sources/android-29/android/database/sqlite/SQLiteCursor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        <state relative-caret-position="248">
+          <caret line="185" selection-start-line="185" selection-end-line="185" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state relative-caret-position="48">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/home/HomeFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/dao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="345" column="36" lean-forward="true" selection-start-line="345" selection-start-column="36" selection-end-line="345" selection-end-column="36" />
+        <state relative-caret-position="48">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/dao/ConfigDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#changeTime#0;class#HomeFragment#0" />
-            <element signature="method#updateTime#0;class#HomeFragment#0" />
-            <element signature="method#calWorkTime#0;class#HomeFragment#0" />
-            <element signature="method#addOnClickSignTime#0;class#HomeFragment#0" />
-            <element signature="e#12008#12171#0" expanded="true" />
-            <element signature="e#12170#12171#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -623,72 +857,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/MainActivity.java">
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/data/data/com.starplum.easysign/databases/esDb.db">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/record/RecordViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" />
-            <element signature="method#onSupportNavigateUp#0;class#MainActivity#0" />
-            <element signature="method#onKeyDown#0;class#MainActivity#0" />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/record/RecordFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="264">
           <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-51" />
-      </provider>
       <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_gallery.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1416">
           <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_send.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_share.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_tools.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/gallery/GalleryFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        <state relative-caret-position="253">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
           <folding>
-            <element signature="e#966#1129#0" expanded="true" />
-            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" />
+            <element signature="method#onSupportNavigateUp#0;class#MainActivity#0" />
+            <element signature="e#3410#3699#0" expanded="true" />
+            <element signature="e#3698#3699#0" expanded="true" />
+            <element signature="e#3742#3930#0" expanded="true" />
+            <element signature="e#3929#3930#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding>
+            <element signature="e#528#550#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_record.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/ui/home/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="148" column="49" lean-forward="true" selection-start-line="148" selection-start-column="49" selection-end-line="148" selection-end-column="49" />
+          <folding>
+            <element signature="method#onCreateView#0;class#HomeFragment#0" />
+            <element signature="method#updateCurrentTime#0;class#HomeFragment#0" />
+            <element signature="method#changeTime#0;class#HomeFragment#0" />
+            <element signature="method#addOnClickSignTime#0;class#HomeFragment#0" />
+            <element signature="method#createHandler#0;class#HomeFragment#0" />
+            <element signature="method#createTimer#0;class#HomeFragment#0" />
+            <element signature="method#initButton#0;class#HomeFragment#0" />
+            <element signature="method#onPause#0;class#HomeFragment#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/database/ESDBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/database/ESDBSchema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/model/SignInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-172">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="method#calWorkMs#0;class#SignInfo#0" />
+            <element signature="e#3775#3776#0" expanded="true" />
+            <element signature="e#3801#3802#0" expanded="true" />
+            <element signature="e#3835#3836#0" expanded="true" />
+            <element signature="e#3859#3860#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/starplum/easysign/dao/SignInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#SICursorWrapper#0;class#SignInfoDao#0" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="method#SignInfoDao#0;class#SignInfoDao#0" />
+            <element signature="method#getContentValues#0;class#SignInfoDao#0" />
+            <element signature="method#querySignInfo#0;class#SignInfoDao#0" />
           </folding>
         </state>
       </provider>

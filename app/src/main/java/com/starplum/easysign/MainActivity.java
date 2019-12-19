@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private static void showExitDialog(Context context)
+    private void showExitDialog(Context context)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("确定退出");
@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                android.os.Process.killProcess(android.os.Process.myPid());
+//                android.os.Process.killProcess(android.os.Process.myPid());
+                finish();
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {

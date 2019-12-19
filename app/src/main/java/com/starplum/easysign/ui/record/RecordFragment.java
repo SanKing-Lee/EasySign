@@ -1,4 +1,4 @@
-package com.starplum.easysign.ui.gallery;
+package com.starplum.easysign.ui.record;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.starplum.easysign.R;
 
-public class GalleryFragment extends Fragment {
+public class RecordFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private RecordViewModel galleryViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+                ViewModelProviders.of(this).get(RecordViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_record, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
         galleryViewModel.getText().observe(this, new Observer<String>() {
             @Override

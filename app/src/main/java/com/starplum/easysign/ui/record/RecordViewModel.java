@@ -1,16 +1,16 @@
-package com.starplum.easysign.ui.gallery;
+package com.starplum.easysign.ui.record;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class RecordViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public RecordViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("查看打卡记录");
     }
 
     public LiveData<String> getText() {
