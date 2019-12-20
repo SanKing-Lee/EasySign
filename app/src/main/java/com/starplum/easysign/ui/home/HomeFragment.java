@@ -46,7 +46,6 @@ public class HomeFragment extends Fragment {
 
     // message type
     private final int MSG_TIMER = 1;
-    private final int MSG_RST = 2;
 
     // sign flag
     private final int SIGN_IN_FLAG = 1;
@@ -118,6 +117,8 @@ public class HomeFragment extends Fragment {
 
         mSignInfoDao = new SignInfoDao(getContext());
 
+        mSignInfoDao.getFinishedSignInfosByYear(2019);
+
         currDateStamp = SignInfo.DATE_STAMP_FORMAT.format(System.currentTimeMillis());
 
         mSignInfo = mSignInfoDao.loadSignInfo(currDateStamp);
@@ -178,7 +179,7 @@ public class HomeFragment extends Fragment {
 
         mSignInfo.calWorkMs();
         mSignInfo.setWorkFulfill();
-        mTextWorkTime.setText(formatMsToTime(mSignInfo.getWorkMs()));
+        mTextWorkTime.setText(mSignInfo.buildWorkTime());
     }
 
     private void changeTime(int flag, long ms) {
@@ -305,6 +306,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mSignInfo.setSignedIn(true);
+                mSignInfoDao.updateSignInfo(mSignInfo);
             }
         });
 
@@ -314,6 +316,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mSignInfo.setSignedOut(true);
+                mSignInfoDao.updateSignInfo(mSignInfo);
             }
         });
 
@@ -324,6 +327,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 mSignInfo.setSignedIn(false);
                 mSignInfo.setSignedOut(false);
+                mSignInfoDao.updateSignInfo(mSignInfo);
             }
         });
     }

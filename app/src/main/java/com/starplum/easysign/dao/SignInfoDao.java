@@ -50,6 +50,7 @@ public class SignInfoDao {
     private static final String LOG_TAG = "SignInfoDao";
     private static final String SIGN_INFO_DATE_STAMP_WHERE_CLAUSE = ESDBSchema.SignTable.SignCols.DATE_STAMP + " = ?";
     private static final String SIGN_INFO_UUID_WHERE_CLAUSE = ESDBSchema.SignTable.SignCols.UUID + " = ?";
+    private static final String SIGN_INFO_DATE_STAMP_LIKE_CLAUSE = ESDBSchema.SignTable.SignCols.DATE_STAMP + " LIKE ?";
 
     private SQLiteDatabase mDatabase;
 
@@ -152,5 +153,23 @@ public class SignInfoDao {
             }
             return signInfos;
         }
+    }
+
+    public List<SignInfo> getFinishedSignInfosByYear(int year)
+    {
+        List<SignInfo> yearSignInfos = new ArrayList<>();
+
+        try(SICursorWrapper cursorWrapper = querySignInfo(SIGN_INFO_DATE_STAMP_LIKE_CLAUSE, new String[] {year+"%"})) {
+            cursorWrapper.moveToFirst();
+            while(!cursorWrapper.isAfterLast()) {
+                SignInfo signInfo = cursorWrapper.getSignInfo();
+                if (signInfo.isSignedOut() && signInfo.isSignedIn()) {
+                    Log.i(LOG_TAG, "getFinishedSignInfoByYear: " + signInfo.toString());
+                    yearSignInfos.add(cursorWrapper.getSignInfo());
+                }
+                cursorWrapper.moveToNext();
+            }
+        }
+        return yearSignInfos;
     }
 }
