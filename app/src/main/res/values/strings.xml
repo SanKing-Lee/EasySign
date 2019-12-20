@@ -24,4 +24,9 @@
     <string name="sign_out_btn">签退</string>
     <string name="signed_out_btn">已签退</string>
 
+<!--    record-->
+    <string name="record_sign_in_time_label">上班时间：</string>
+    <string name="record_sign_out_time_label">下班时间：</string>
+    <string name="record_work_time_label">工作时长：</string>
+
 </resources>

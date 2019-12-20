@@ -24,20 +24,24 @@ public class ESDBHelper extends SQLiteOpenHelper {
                 is_signed_out,
                 time_signed_in,
                 time_signed_out,
+                time_work,
+                time_work_fulfill;
                 is_work_time_fulfill
             );
         */
         db.execSQL(
-            "create table " + ESDBSchema.SignTable.NAME + "(" +
-                " id integer primary key autoincrement, " +
-                ESDBSchema.SignTable.SignCols.UUID + ", " +
-                ESDBSchema.SignTable.SignCols.DATE_STAMP + "," +
-                ESDBSchema.SignTable.SignCols.IS_SIGNED_IN + ", " +
-                ESDBSchema.SignTable.SignCols.IS_SIGNED_OUT + ", " +
-                ESDBSchema.SignTable.SignCols.TIME_SIGNED_IN + ", " +
-                ESDBSchema.SignTable.SignCols.TIME_SIGNED_OUT + ", " +
-                ESDBSchema.SignTable.SignCols.IS_WORK_TIME_FULFILL +
-            ")"
+                "create table " + ESDBSchema.SignTable.NAME + "(" +
+                        " id integer primary key autoincrement, " +
+                        ESDBSchema.SignTable.SignCols.UUID + ", " +
+                        ESDBSchema.SignTable.SignCols.DATE_STAMP + "," +
+                        ESDBSchema.SignTable.SignCols.IS_SIGNED_IN + ", " +
+                        ESDBSchema.SignTable.SignCols.IS_SIGNED_OUT + ", " +
+                        ESDBSchema.SignTable.SignCols.TIME_SIGNED_IN + ", " +
+                        ESDBSchema.SignTable.SignCols.TIME_SIGNED_OUT + ", " +
+                        ESDBSchema.SignTable.SignCols.TIME_WORK + ", " +
+                        ESDBSchema.SignTable.SignCols.TIME_WORK_FULFILL + ", " +
+                        ESDBSchema.SignTable.SignCols.IS_WORK_TIME_FULFILL +
+                        ")"
         );
 
         /*

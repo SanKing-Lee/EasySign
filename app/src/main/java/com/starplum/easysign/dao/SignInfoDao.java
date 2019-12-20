@@ -29,6 +29,8 @@ public class SignInfoDao {
             String sSignInMs = getString(getColumnIndex(ESDBSchema.SignTable.SignCols.TIME_SIGNED_IN));
             String sSignedOut = getString(getColumnIndex(ESDBSchema.SignTable.SignCols.IS_SIGNED_OUT));
             String sSignOutMs = getString(getColumnIndex(ESDBSchema.SignTable.SignCols.TIME_SIGNED_OUT));
+            String sWorkMs = getString(getColumnIndex(ESDBSchema.SignTable.SignCols.TIME_WORK));
+            String sWorkFulFillMs = getString(getColumnIndex(ESDBSchema.SignTable.SignCols.TIME_WORK_FULFILL));
             String sWorkFulfill = getString(getColumnIndex(ESDBSchema.SignTable.SignCols.IS_WORK_TIME_FULFILL));
 
             SignInfo signInfo = new SignInfo();
@@ -38,6 +40,8 @@ public class SignInfoDao {
             if (sSignInMs != null) signInfo.setSignInMs(Long.parseLong(sSignInMs));
             if (sSignedOut != null) signInfo.setSignedOut(Integer.parseInt(sSignedOut) != 0);
             if (sSignOutMs != null) signInfo.setSignOutMs(Long.parseLong(sSignOutMs));
+            if(sWorkMs != null) signInfo.setWorkMs(Long.parseLong(sWorkMs));
+            if(sWorkFulFillMs != null) signInfo.setWorkFulfillMs(Long.parseLong(sWorkFulFillMs));
             if (sWorkFulfill != null) signInfo.setWorkFulfill(Integer.parseInt(sWorkFulfill) != 0);
             return signInfo;
         }
@@ -61,6 +65,8 @@ public class SignInfoDao {
         values.put(ESDBSchema.SignTable.SignCols.IS_SIGNED_OUT, signInfo.isSignedOut());
         values.put(ESDBSchema.SignTable.SignCols.TIME_SIGNED_IN, signInfo.getSignInMs());
         values.put(ESDBSchema.SignTable.SignCols.TIME_SIGNED_OUT, signInfo.getSignOutMs());
+        values.put(ESDBSchema.SignTable.SignCols.TIME_WORK, signInfo.getWorkMs());
+        values.put(ESDBSchema.SignTable.SignCols.TIME_WORK_FULFILL, signInfo.getWorkFulfillMs());
         values.put(ESDBSchema.SignTable.SignCols.IS_WORK_TIME_FULFILL, signInfo.isWorkFulfill());
         return values;
     }
@@ -126,6 +132,22 @@ public class SignInfoDao {
             cursorWrapper.moveToFirst();
             while (!cursorWrapper.isAfterLast()) {
                 signInfos.add(cursorWrapper.getSignInfo());
+                cursorWrapper.moveToNext();
+            }
+            return signInfos;
+        }
+    }
+
+    public List<SignInfo> getFinishedSignInfos() {
+        List<SignInfo> signInfos = new ArrayList<>();
+
+        try (SICursorWrapper cursorWrapper = querySignInfo(null, null)) {
+            cursorWrapper.moveToFirst();
+            while (!cursorWrapper.isAfterLast()) {
+                SignInfo signInfo = cursorWrapper.getSignInfo();
+                if (signInfo.isSignedOut() && signInfo.isSignedIn()) {
+                    signInfos.add(cursorWrapper.getSignInfo());
+                }
                 cursorWrapper.moveToNext();
             }
             return signInfos;

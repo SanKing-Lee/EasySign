@@ -139,17 +139,20 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
-    private String formatMsTime(int signFlag) {
-        switch (signFlag) {
-            case SIGN_IN_FLAG:
-                return SIGN_TIME_FORMAT.format(mSignInfo.getSignInMs());
-            case SIGN_OUT_FLAG:
-                return SIGN_TIME_FORMAT.format(mSignInfo.getSignOutMs());
-            case WORK_FLAG:
-                return mSignInfo.buildWorkTime();
-            default:
-                return "";
-        }
+    private String formatMsToTime(long ms) {
+        return SIGN_TIME_FORMAT.format(ms);
+    }
+
+    private void updateCurrentTime() {
+        // 当前的日期
+        DateFormat dateFormat = DateFormat.getDateInstance();
+        mStrCurrDate = dateFormat.format(System.currentTimeMillis());
+        mTextCurrDate.setText(mStrCurrDate);
+
+        // 当前的时间
+        DateFormat timeFormat = DateFormat.getTimeInstance();
+        mStrCurrTime = timeFormat.format(System.currentTimeMillis());
+        mTextCurrTime.setText(mStrCurrTime);
     }
 
     private void updateSignInfo() {
@@ -170,24 +173,12 @@ public class HomeFragment extends Fragment {
             mBtnSignOut.setEnabled(false);
             mBtnSignOut.setText(R.string.signed_out_btn);
         }
-        mTextSignInTime.setText(formatMsTime(SIGN_IN_FLAG));
-        mTextSignOutTime.setText(formatMsTime(SIGN_OUT_FLAG));
+        mTextSignInTime.setText(formatMsToTime(mSignInfo.getSignInMs()));
+        mTextSignOutTime.setText(formatMsToTime(mSignInfo.getSignOutMs()));
 
         mSignInfo.calWorkMs();
         mSignInfo.setWorkFulfill();
-        mTextWorkTime.setText(formatMsTime(WORK_FLAG));
-    }
-
-    private void updateCurrentTime() {
-        // 当前的日期
-        DateFormat dateFormat = DateFormat.getDateInstance();
-        mStrCurrDate = dateFormat.format(System.currentTimeMillis());
-        mTextCurrDate.setText(mStrCurrDate);
-
-        // 当前的时间
-        DateFormat timeFormat = DateFormat.getTimeInstance();
-        mStrCurrTime = timeFormat.format(System.currentTimeMillis());
-        mTextCurrTime.setText(mStrCurrTime);
+        mTextWorkTime.setText(formatMsToTime(mSignInfo.getWorkMs()));
     }
 
     private void changeTime(int flag, long ms) {
@@ -212,8 +203,9 @@ public class HomeFragment extends Fragment {
         int currSec = Calendar.getInstance().get(Calendar.SECOND);
         long ms = System.currentTimeMillis() - (currHour - hour) * 60 * 60 * 1000
                 - (currMinute - minute) * 60 * 1000
-                - currSec*1000;
+                - currSec * 1000;
         changeTime(signFlag, ms);
+        mSignInfoDao.updateSignInfo(mSignInfo);
     }
 
     private void addOnClickSignTime() {
@@ -286,7 +278,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void createTimer() {
-        // 计时器线程，每过一秒发送消息，更新当前的日期和时间
+        // 计时器线程，每过0.1秒发送消息，更新当前的日期和时间
         Runnable Timer = new Runnable() {
             @Override
             public void run() {
